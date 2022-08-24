@@ -1,0 +1,6 @@
+uWSGI
+flask
+requests
+fuzzywuzzy
+python-dotenv
+gitpython

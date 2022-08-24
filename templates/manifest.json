@@ -1,0 +1,16 @@
+{
+  "short_name": "IOT calc",
+  "name": "Solar IOT calculator",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#FFFFFF",
+  "display": "standalone", 
+  "scope": "/",
+  "theme_color": "#FFFFFF"
+}
