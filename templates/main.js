@@ -6,7 +6,7 @@
  */
 
 /* globals */
-var version_string = "0.2";
+var version_string = "0.3";
 var app_name_version = "Solar IOT calculator V" + version_string;
 
 _DEBUG_ = false;
