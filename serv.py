@@ -1,10 +1,7 @@
-from flask import Flask, request, render_template, jsonify, json
-from random import randint
-from threading import Lock
+from flask import Flask, request, render_template, jsonify, json, abort
 from fuzzywuzzy import fuzz
 from dotenv import load_dotenv
-import os, hmac, hashlib, git, requests, datetime, time
-
+import os, hmac, hashlib, git, requests
 
 SOLAR_API_BASE = "https://re.jrc.ec.europa.eu/api/SHScalc?outputformat=json"
 LOCATION_SEARCH_API_BASE = "https://nominatim.openstreetmap.org/search?format=json"
@@ -140,7 +137,6 @@ def getOffGridPrediction():
 ###################################
 # autodeploy using git webhooks
 ###################################
-
 
 load_dotenv()   # load .env file
 w_secret = os.environ['SECRET']  # get SECRET env var
