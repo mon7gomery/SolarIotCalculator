@@ -65,7 +65,7 @@ def getLocation():
                 json_tmp_obj["display_name"] = location["display_name"]
                 json_tmp_obj["lat"] = location["lat"]
                 json_tmp_obj["lon"] = location["lon"]
-                places.applicationend(json_tmp_obj)
+                places.append(json_tmp_obj)
             #    print (str(ratio) +" keeping " + location["display_name"])
             #else:
             #    print (str(ratio) +" removing " + location["display_name"])
