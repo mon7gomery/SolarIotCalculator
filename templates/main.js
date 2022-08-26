@@ -138,8 +138,14 @@ function createMap()
 
     // Creating a map object
     map = new L.map('map', mapOptions);
+
     // Creating a Layer object
-    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+        subdomains: 'abc'
+        }).addTo(map)
+
     // Adding layer to the map
     map.addLayer(layer);
 
