@@ -103,7 +103,7 @@ def getOffGridPrediction():
 
         # calculate average current consumption
         tasks = content['tasks']
-        total_duration = 1
+        total_duration = 0
         total_energy = 0
         avg_current_mA = 0
 
@@ -112,7 +112,10 @@ def getOffGridPrediction():
                 total_energy += float(task['current']) * float(task['duration'])   # current in mA, duration in seconds
                 total_duration += float(task['duration'])
 
-        avg_current_mA = total_energy / total_duration
+        if total_duration:
+            avg_current_mA = total_energy / total_duration
+        else:
+            avg_current_mA = 0
 
         print('Average current consumption: ' + str(avg_current_mA) + 'mA')
 
@@ -128,7 +131,7 @@ def getOffGridPrediction():
                                             bat_cutoff_percentage)
 
         prediction = prediction.get_json()
-        prediction["consumer"] = "teststring"
+        prediction["average_current"] = avg_current_mA
         return(jsonify(prediction))
     else:
         return(500) # vs 400?? bad request

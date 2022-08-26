@@ -139,16 +139,6 @@
                 <div class="col-md-9">
                   <p><small>Battery protection mechanism kicks in (could be in hardware or software).</small></p>
                 </div>
-
-
-                <div class="form-group col-md-3" hidden>
-                  <label for="avgcurrent">average current consumption [mA]</label>
-                  <input name="avgcurrent" type="number" step="0.000001" class="form-control" id="avgcurrent" value="0.2" required>
-                </div>
-                <div class="col-md-9">
-                    <p><small>The average current consumption of the self-sufficient solar powered system.</p></small>
-                </div>
-
                 
                 <div class="form-group col-md-3" hidden>
                   <label for="lat">latitude</label>
@@ -217,12 +207,18 @@
             <!-- days with empty battery -->
             <div class="alert alert-success" id="batfine" role="alert">
               <span>Days with empty battery per year: <a class="font-weight-bold" id="emptydays-fine"></a></span>
+              <br>
+              <span>Average system current consumption: <a class="font-weight-bold" id="avg-current-fine"></a></span>
             </div>
             <div class="alert alert-warning" id="batwarning" role="alert">
               <span>Days with empty battery per year: <a class="font-weight-bold" id="emptydays-warning"></a></span>
+              <br>
+              <span>Average system current consumption: <a class="font-weight-bold" id="avg-current-warning"></a></span>
             </div>
             <div class="alert alert-danger" id="batdanger" role="alert">
               <span>Days with empty battery per year: <a class="font-weight-bold" id="emptydays-danger"></a></span>
+              <br>
+              <span>Average system current consumption: <a class="font-weight-bold" id="avg-current-danger"></a></span>
             </div>
 
             <br><br>
@@ -243,11 +239,6 @@
           Solar IOT calculator uses the following services:
           <a href="https://joint-research-centre.ec.europa.eu/pvgis-photovoltaic-geographical-information-system/getting-started-pvgis/api-non-interactive-service_en" target="_blank">PVGIS API</a>,
           <a href="https://nominatim.org/release-docs/develop/api/Search/" target="_blank">Nominatim</a>,
-          <a href="https://leafletjs.com/reference-1.7.1.html" target="_blank">Leafletjs</a>,
-          <a href="https://www.openstreetmap.org" target="_blank">OSM</a>,
-          <a href="https://jquery.com/" target="_blank">jQuery</a>,
-          <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>,
-          <a href="https://www.flotcharts.org/" target="_blank">Flot Charts</a>,
           <a href="https://gitlampe.goip.de" traget="_blank">Solar IOT calculator</a>
         </span>
       </div>

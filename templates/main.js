@@ -256,7 +256,7 @@ function predict()
         dataType: 'json',
         url: "/api/v1/get/offgirdprediction",
         success: function (data) {
-          updatePercentageEmptyAlert(data["outputs"]["totals"]["f_e"]);
+          updatePercentageEmptyAlert(data["outputs"]["totals"]["f_e"], data["average_current"]);
           updateSocChart(data["outputs"]["histogram"]);
           updateBatEmptyChart(data["outputs"]["monthly"]);
           if (_DEBUG_) console.log(data);
@@ -310,7 +310,7 @@ function getSystemParamsDict()
 }
 
 // prediction alert and chart related
-function updatePercentageEmptyAlert(percentage)
+function updatePercentageEmptyAlert(percentage, average_current)
 {
     var days = 365 * percentage / 100;
     days = Math.round(days * 100) / 100
@@ -319,19 +319,24 @@ function updatePercentageEmptyAlert(percentage)
     $('#batwarning').hide();
     $('#batdanger').hide();
 
+    average_current = Math.floor(average_current * 1000)/1000;
+
     if (percentage == 0)
     {
         $('#emptydays-fine').html(percentage+"% ("+ days +"days)");
+        $('#avg-current-fine').html(average_current + "mA");
         $('#batfine').show();
     }
     else if (percentage < 5)
     {
         $('#emptydays-warning').html(percentage+"% ("+ days +"days)");
+        $('#avg-current-warning').html(average_current + "mA");
         $('#batwarning').show();
     }
     else
     {
         $('#emptydays-danger').html(percentage+"% ("+ days +"days)");
+        $('#avg-current-danger').html(average_current + "mA");
         $('#batdanger').show();
     }
 
