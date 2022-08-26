@@ -1,16 +1,11 @@
 SHELL := /bin/bash
 
-debug:
+run:
 	# start flask development webserver
 	source ./.venv3/bin/activate; \
 	export FLASK_APP=serv; \
 	export FLASK_DEBUG=1; \
-	flask run;
-
-run:
-	# start production server
-	source ./.venv3/bin/activate; \
-	uwsgi --wsgi-file serv.py --http :5000
+	flask run --cert=adhoc;
 	
 install:
 	# sudo apt install python3 python3-venv

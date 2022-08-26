@@ -9,7 +9,7 @@ SYSTEM_VOLATGE = 3.3  # does'nt matter to much as long as there is no dcdc invol
 SYSTEM_SAFETY_FAKTOR = 1.0
 SOLAR_PANEL_SLOPE = 35  # angle of the solar panel from horizontal plane   
 
-application = Flask(__name__, static_url_path='',static_folder="templates")
+app = Flask(__name__, static_url_path='',static_folder="templates")
 
 
 '''
@@ -39,11 +39,11 @@ def solarDatabaseRequest(lat: float, lon: float, slope, azimuth, peakcurrent, ca
     # --- modifiy response here
     return (jsonify(json_data))
 
-@application.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@application.route('/api/v1/get/location', methods=['POST'])
+@app.route('/api/v1/get/location', methods=['POST'])
 def getLocation():
     if (request.is_json):
         content = request.get_json()
@@ -75,7 +75,7 @@ def getLocation():
         return(500)
 
 
-@application.route('/api/v1/get/offgirdprediction', methods=['POST'])
+@app.route('/api/v1/get/offgirdprediction', methods=['POST'])
 def getOffGridPrediction():
     if (request.is_json):
         content = request.get_json()
@@ -149,7 +149,7 @@ def is_valid_signature(x_hub_signature, data, private_key):
     mac = hmac.new(encoded_key, msg=data, digestmod=algorithm)
     return hmac.compare_digest(mac.hexdigest(), github_signature)
 
-@application.route('/update_server', methods=['POST', 'GET'])
+@app.route('/update_server', methods=['POST', 'GET'])
 def webhook():
     if request.method != 'POST':
         return 'Wrong request method'

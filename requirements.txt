@@ -4,3 +4,4 @@ requests
 fuzzywuzzy
 python-dotenv
 gitpython
+pyopenssl
