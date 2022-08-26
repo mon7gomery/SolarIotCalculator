@@ -86,10 +86,9 @@ def getOffGridPrediction():
         lon =                   float(content['lon'])
         solar_peak_mA =         float(content['peakcurrent'])
         battery_mAh =           float(content['batcap'])
-        #avg_current_mA =        float(content['avgcurrent'])
         bat_cutoff_percentage = float(content["batcutoff"])
         azimuth =               int(content["azimuth"])
-        slope   =               35
+        slope   =               SOLAR_PANEL_SLOPE  # use a fixd solar panel slop
 
         # limit input values
         if bat_cutoff_percentage < 1:
@@ -132,9 +131,11 @@ def getOffGridPrediction():
 
         prediction = prediction.get_json()
         prediction["average_current"] = avg_current_mA
+        
         return(jsonify(prediction))
+    
     else:
-        return(500) # vs 400?? bad request
+        return(418)
     
     
 ###################################
