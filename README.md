@@ -29,7 +29,7 @@ make run
 
 ## Thanks to
 
-Aadi Bajpai for an example of [github autodeploy]() code using webhooks.
+Aadi Bajpai for an example of [github autodeploy](https://medium.com/@aadibajpai/deploying-to-pythonanywhere-via-github-6f967956e664) code using webhooks.
 
 The following services/libs:
 
