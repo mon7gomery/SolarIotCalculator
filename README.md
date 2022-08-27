@@ -5,30 +5,42 @@ systems. The app was originally designed with solar panels and LiIon batteries i
 
 Thanks to [pythonanywhere](https://www.pythonanywhere.com) this [demo](http://solariotcalc.pythonanywhere.com/) can be hosted for free :)
 
-## Development/self-hosted
+## development/self-hosting
 
-### system 
+### system dependencies
+
 ```bash
 apt install python3-venv python3-pip
 ```
 
 ### python
 
-To create an python3 virtual environment and install all dependecies run:
+To create an python3 virtual environment and install all dependencies run:
 
 ```bash
 make install
 ```
 
-## start flask webserver
+### start flask web server
 
 ```bash
 make run
 ```
 
-## refs
-This app uses the following services:
+## Thanks to
+
+Aadi Bajpai for an example of [github autodeploy]() code using webhooks.
+
+The following services/libs:
 
 [OpenStreetMaps](https://www.openstreetmap.org)
+
 [Nominatim Geocoding](https://nominatim.org/release-docs/develop/api/Search/)
+
 [PVGIS API](https://joint-research-centre.ec.europa.eu/pvgis-photovoltaic-geographical-information-system/getting-started-pvgis/api-non-interactive-service_en)
+
+[Bootstrap](https://getbootstrap.com/)
+
+[jQuery](https://jquery.com/)
+
+[leaflet](https://leafletjs.com/)
