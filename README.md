@@ -3,7 +3,7 @@
 A quick&dirty python flask based web application to estimate system availability of self-sufficient IOT
 systems. The app was originally designed with solar panels and LiIon batteries in mind. Other energy harvesting techs would be interesting, too.
 
-Thanks to [pythonanywhere](https://www.pythonanywhere.com) this [demo](http://solariotcalc.pythonanywhere.com/) can be hosted for free :)
+Thanks to [pythonanywhere](https://www.pythonanywhere.com) this [demo](http://solariotcalc.eu.pythonanywhere.com/) can be hosted for free :)
 
 ## development/self-hosting
 
