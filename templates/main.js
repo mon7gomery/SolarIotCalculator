@@ -353,7 +353,7 @@ function updateSocChart(histogram_obj)
     });
     
     var dataset = [
-        { label: "Battery state of charge", data: histogram_data, color: "#5482FF" }
+        { label: "Battery state of charge [%]", data: histogram_data, color: "#5482FF" }
     ];
     
     var options = {
