@@ -49,7 +49,8 @@ def getLocation():
         content = request.get_json()
         searchstring = content["address"]
         request_string = LOCATION_SEARCH_API_BASE+"&q=" + searchstring
-        response = requests.get(request_string)
+        headers={"User-Agent": "SolarIotCalculator"}
+        response = requests.get(request_string, headers=headers)
 
         json_data = response.json()
         # take first entry and reduce respose data -> if the first one is not re right one a more specific search needs to be done
